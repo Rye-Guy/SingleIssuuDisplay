@@ -1,12 +1,13 @@
 import React from 'react';
 
 class FullSizePublication extends React.Component{
-
+////e.issuu.com/embed.html#${this.props.activeDocument.dataConfigId}
+//https://e.issuu.com/embed.html?identifier=nx5otphrxrn7&embedType=script&u=wall2wall&d=nhvanchinese_apr13_2019_virtual&p=1
     render(){
-        if(this.props.activeDocument.hasOwnProperty('dataConfigId')){
+        if(this.props.bookName){
             return (
                 <div>
-                    <iframe ref={this.myIframe} style={{'overflow':'hidden','border': 'none', 'height': '100vh', 'width': '100vw'}} src={`//e.issuu.com/embed.html#${this.props.activeDocument.dataConfigId}`}></iframe>
+                    <iframe ref={this.myIframe} style={{'overflow':'hidden','border': 'none', 'height': '100vh', 'width': '100vw'}} src={`https://e.issuu.com/embed.html?embedType=script&u=wall2wall&d=${this.props.bookName}&p=1`}></iframe>
                 </div>
             )
         }else{
