@@ -1,8 +1,6 @@
 import React from 'react';
 
 class FullSizePublication extends React.Component{
-////e.issuu.com/embed.html#${this.props.activeDocument.dataConfigId}
-//https://e.issuu.com/embed.html?identifier=nx5otphrxrn7&embedType=script&u=wall2wall&d=nhvanchinese_apr13_2019_virtual&p=1
     render(){
         if(this.props.bookName){
             return (

@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props)
     this.state = {config: {
       documentId: '',
-      folderId: 'e6f5c5a3-5623-4322-89ca-0ab60837d8b8'
+      folderId: '7ccfd854-246f-49f1-badc-aefbc1003ace'
     }, activeDocument: {}, bookmarksOnIssuu: [], bookName: ''}
 
   }

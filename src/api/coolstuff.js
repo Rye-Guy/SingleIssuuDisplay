@@ -9,7 +9,6 @@ function build_signature(apiSecret, params_obj){
     Object.keys(params_obj).sort().forEach(function(v, i){
         ordered_params_for_hash += `${v}${params_obj[v]}`
     });
-    console.log(apiSecret+ordered_params_for_hash)
     const signature = md5(apiSecret+ordered_params_for_hash)
     return signature
 }
@@ -22,7 +21,6 @@ function Parameters(action_string, apiKey, additional_params){
 }
 
 function unpack_additional_params(obj){
-    console.log(obj)
     Object.keys(obj.additional_params).sort().forEach(function(v, i){
         obj[v] = obj.additional_params[v]
     });
