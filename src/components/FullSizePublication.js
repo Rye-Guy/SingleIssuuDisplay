@@ -5,7 +5,7 @@ class FullSizePublication extends React.Component{
         if(this.props.bookName){
             return (
                 <div>
-                    <iframe ref={this.myIframe} style={{'overflow':'hidden','border': 'none', 'height': '100vh', 'width': '100vw'}} src={`https://e.issuu.com/embed.html?embedType=script&u=wall2wall&d=${this.props.bookName}&p=1`}></iframe>
+                    <iframe title={this.props.bookName} ref={this.myIframe} style={{'overflow':'hidden','border': 'none', 'height': '100vh', 'width': '100vw'}} src={`https://e.issuu.com/embed.html?embedType=script&u=wall2wall&d=${this.props.bookName}&p=1`}></iframe>
                 </div>
             )
         }else{

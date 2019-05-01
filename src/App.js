@@ -13,9 +13,8 @@ class App extends React.Component {
   constructor(props){
     super(props)
     this.state = {config: {
-      documentId: '',
       folderId: '7ccfd854-246f-49f1-badc-aefbc1003ace'
-    }, activeDocument: {}, bookmarksOnIssuu: [], bookName: ''}
+    }, bookName: ''}
 
   }
   
@@ -29,8 +28,7 @@ class App extends React.Component {
     const params = new api.create_base_parameters_obj('issuu.bookmarks.list', api.api_key, additional_params)
     const api_call = api.add_custom_params(params)
     api.call_issuu(api_call).then((res)=>{
-      this.setState({'bookmarksOnIssuu': res.data.rsp._content.result._content})
-      this.setState({'bookName': this.state.bookmarksOnIssuu[0].bookmark.name})
+      this.setState({'bookName': res.data.rsp._content.result._content[0].bookmark.name})
       console.log(this.state)
     }).catch((err)=>{console.log(err)})
   }
@@ -42,7 +40,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <FullSizePublication activeDocument={this.state.activeDocument} bookName={this.state.bookName}></FullSizePublication>
+        <FullSizePublication bookName={this.state.bookName}></FullSizePublication>
       </div>
     );
   }
